@@ -1,0 +1,561 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    scroll-behavior: smooth;
+    font-family: 'Roboto Mono', monospace;
+}
+
+/* it is colour variable section */
+:root {
+    --first: #FF6B6B;
+    --second: #06113C;
+    --third: #304bf5;
+}
+
+/* header section */
+header {
+    width: 100%;
+    height: 100vh;
+}
+
+/* nav1 start */
+.nav1 {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 2px 0px 3px gray;
+    text-align: center;
+}
+
+.nav1 .left {
+    flex-basis: 50%;
+    letter-spacing: 2px;
+}
+
+.nav1 .left a {
+    text-decoration: none;
+    /*To remove the underline*/
+    color: var(--third);
+    font-weight: bold;
+    margin: 0px 5px;
+}
+
+.right {
+    flex-basis: 50%;
+}
+
+.right i {
+    font-size: 20px;
+    margin: 0px 15px;
+    color: var(--third);
+    padding: 8px;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+
+.nav1 .right i:hover {
+    transform: rotate(360deg);
+}
+
+/* nav2 start */
+.nav2 {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.nav2 .nav2-left,
+.nav2 .nav2-center,
+.nav2 .nav2-right {
+    flex-basis: 30%;
+    margin: auto;
+    cursor: pointer;
+}
+
+.nav2 .nav2-left i {
+    margin-left: 15px;
+}
+
+.nav2 .nav2-center h1 {
+    color: var(--third);
+    font-size: 2rem;
+    letter-spacing: 5px;
+    font-weight: bold;
+}
+
+.nav2 .nav2-center h1 span {
+    color: gray;
+}
+
+.nav2 .nav2-center p {
+    color: black;
+    margin-top: 5px;
+    font-size: 15px;
+}
+
+.nav2 .nav2-left i {
+    margin: 0px 5px;
+}
+
+.nav3 {
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+}
+
+.nav3 ul {
+    list-style: none;
+    text-align: center;
+}
+
+.nav3 ul li {
+    display: inline-block;
+    width: 150px;
+    position: relative;
+    z-index: 99;
+}
+
+.nav3 ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    display: block;
+}
+
+.nav3 ul li a:hover {
+    color: var(--third);
+}
+
+.nav3 ul li i {
+    color: var(--third);
+    margin: 0px 5px;
+}
+
+.nav3 ul ul {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    display: none;
+}
+
+.nav3 ul ul li {
+    background-color: white;
+    border-bottom: 1px solid black;
+}
+
+nav ul li:hover>ul {
+    display: block;
+}
+
+/* featured start */
+.featured {
+    width: 100%;
+    height: 60vh;
+    background: linear-gradient(to right, rgba(0, 0, 0, 1) 5%, rgba(255, 255, 255, 0.2)), url(image/ecommerce1.jpg);
+    background-size: cover;
+    background-position: top;
+    position: relative
+}
+
+.featured-text {
+    max-width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 2rem;
+    letter-spacing: 5px;
+    font-family: 'Akaya Kanadaka', cursive;
+}
+
+.featured-text button {
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    background-color: var(--third);
+    color: white;
+    margin: 20px 0px;
+}
+
+/*----- new items ------*/
+
+.latest {
+    padding: 50px 100px;
+}
+
+.product-intro {
+    text-align: center;
+}
+
+.product-intro h1 {
+    color: var(--third);
+    letter-spacing: 0.2rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.product-intro h1 span {
+    color: var(--second);
+}
+
+.product-intro p {
+    color: gray;
+    margin: 15px 0px;
+}
+
+/* card-container */
+
+.card-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    margin: 4rem 0;
+    flex-wrap: wrap;
+}
+
+.card-container .card {
+    flex-basis: 20%;
+    padding: 0.8rem;
+    position: relative;
+}
+
+.card img {
+    width: 100%;
+    transition: 0.5s ease-in-out;
+}
+
+.card i {
+    color: goldenrod;
+    margin: 10px 0px;
+}
+
+.card button {
+    color: white;
+    background-color: black;
+    border: none;
+    outline: none;
+    margin-top: 15px;
+    padding: 5px 20px;
+}
+
+.card:hover img,
+.card:hover h1 {
+    width: 80%;
+    color: var(--third);
+}
+
+/* 20% discount */
+.card::before {
+    content: '20% off';
+    width: 25%;
+    height: 25px;
+    line-height: 25px;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--third);
+    padding: 0px 4px;
+    transform: rotate(-20deg);
+}
+
+/* Products for youth generation */
+.trends {
+    padding: 50px 100px;
+    background-color: rgba(0, 0, 0, 0.01);
+}
+
+/* Here is swiper css code */
+.trends .swiper-container {
+    width: 100%;
+    padding: 50px;
+    padding-bottom: 50px;
+}
+
+.trends .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 400px;
+    height: 400px;
+}
+
+.trends .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* footer section */
+footer{
+    background-color: var(--second);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 2rem;
+}
+
+footer div{
+    flex-basis: 30%;
+}
+
+footer h1{
+letter-spacing: 0.5rem;
+}
+
+footer h1 span{
+    color: var(--third);
+}
+
+footer p{
+    font-size: 1rem;
+}
+
+footer{
+    margin: 0px 5px;
+}
+
+/* sidenav dispaly */
+#sidenav{
+    display: none;
+}
+
+/* manubar icon */
+#menubar{
+    display: none ;
+}
+
+/* for responsiveness use css media quary */
+@media only screen and (max-width:770px)
+{
+    #sidenav{
+        display: block;
+    }
+
+    #menubar{
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 0%;
+        transform: translate(0%, -50%);   /* used to display the icon x-axis and y-axis */
+        z-index: 99;  /* it is used set the element top of position  */
+        background-color: black;
+        color: white;
+        font-size: 2rem;
+        padding: 20px 10px;
+        animation: animate 5s ease infinite; /* to give the animation */
+    }
+
+    @keyframes animate {
+        0%{
+            background-color: black;
+        }
+        100%{
+            background-color: var(--third);
+        }
+    }
+
+    /* nav3 responsive */
+    #sidenav {
+        width: 0px;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 3;
+        background-color: var(--second);
+        padding-top: 70px;
+        display: block;
+        overflow: hidden;
+        transition: 0.5s ease-in-out;
+    }
+    
+    #sidenav ul {
+        list-style: none;
+    }
+    
+    #sidenav ul li {
+        display: block;
+        width: 200px;
+        position: relative;
+        z-index: 99;
+        margin: 10px 20px;
+    }
+    
+    #sidenav ul li a {
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+        display: block;
+        font-size: 20px;
+        padding: 10px 20px;
+    }
+    
+    #sidenav ul li a:hover {
+        color: var(--third);
+    }
+    
+    #sidenav ul li i {
+        color: white;
+        margin: 0px 5px;
+    }
+    
+    #sidenav ul ul {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        display: none;
+    }
+    
+    #sidenav ul ul li {
+        /* background-color: white; */
+        border-bottom: 1px solid white;
+    }
+    
+    #sidenav ul li:hover>ul {
+        display: block;
+    }
+    /* end */
+
+    .nav1{
+        position: relative;
+        z-index: 2;
+        background-color: white;
+    }
+    .right{
+        font-size: 15px;
+        margin: 0px 5px;
+    }
+
+    /* for icon */
+    .nav2 .nav2-left i{
+        margin: 0px;
+    }
+
+    .nav2 .nav2-center h1 span{
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+    }
+
+    .nav2 .nav2-right p{
+        color: gray;
+        font-size: 10px;
+        margin-top: 5px;
+    }
+
+    .nav3{
+        display: none;
+    }
+
+    .featured{
+        background-attachment: fixed;
+    }
+
+    /* leatest */
+
+    .latest {
+        padding: 0px 50px;
+    }
+    
+    .product-intro {
+        text-align: center;
+    }
+    
+    .product-intro h1 {
+        color: var(--third);
+        letter-spacing: 0.2rem;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+    
+    .product-intro h1 span {
+        color: var(--second);
+    }
+    
+    .product-intro p {
+        color: gray;
+        margin: 15px 0px;
+    }
+    
+    /* card-container */
+    
+    .card-container {
+        margin: 2rem 0;
+    }
+    
+    .card-container .card {
+        flex-basis: 100%;
+        padding: 0.8rem;
+        position: relative;
+        text-align: center;
+    }
+    
+    .card img {
+        width: 100%;
+        transition: 0.5s ease-in-out;
+    }
+    
+    .card i {
+        color: goldenrod;
+        margin: 10px 0px;
+    }
+    
+    .card button {
+        color: white;
+        background-color: black;
+        border: none;
+        outline: none;
+        margin-top: 15px;
+        padding: 5px 20px;
+    }
+
+    /* trends responsive */
+
+    .trends {
+        padding: 20px 50px;
+        background-color: rgba(0, 0, 0, 0.01);
+    }
+    
+    /* Here is swiper css code */
+    .trends .swiper-container {
+        width: 100%;
+        padding: 50px;
+        padding-bottom: 50px;
+    }
+    
+    .trends .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        width: 360px;
+        height: 360px;
+    }
+    
+    .trends .swiper-slide img {
+        display: block;
+        width: 100%;
+    }
+
+    /* footer responsive */
+    
+    footer div{
+        flex-basis: 50%;
+        margin: 10px 0px;
+    }
+}

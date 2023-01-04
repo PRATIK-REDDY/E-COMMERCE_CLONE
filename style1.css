@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    scroll-behavior: smooth;
+}
+
+:root{
+    --first:#54BAB9;
+    --second:#06113C;
+    --third:#F94C66;
+}
+
+header{
+    width: 100%;
+    height: 100vh;
+}
+
+/* .nav1{
+    width: 100%;
+    height: 80px;
+} */
+
+.nav1 .left{
+    display: flex;
+    margin: 15px 10px;
+}
+
+.nav1 .left h1{
+    font-size: 30px;
+    color: var(--third);
+
+}
+
+.nav1 .left p{
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 15px;
+}
+
+.right ul li{
+    text-align: center;
+    display: inline-block;
+    margin: 0px 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
